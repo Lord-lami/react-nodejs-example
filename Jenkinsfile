@@ -31,7 +31,7 @@ pipeline {
                     echo 'deploying docker image to EC2...'
                     // if Jenkins server is not on EC2 server run with sshAgent first
                     
-                    sh "docker run ${IMAGE_NAME}"
+                    sh "docker run -d -p 80:80 ${IMAGE_NAME}"
                 }
             }
         }
